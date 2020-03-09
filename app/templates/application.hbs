@@ -1,5 +1,19 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<table style="border-spacing: 0;font-family: sans-serif;font-size: small;">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Size</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.runs as |run index|}}
+    <tr>
+      <th>{{index}}</th>
+      <th>{{run.size}}</th>
+      <th>{{run.duration}}</th>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<button type="button" {{on "click" this.run}}>Run</button>
